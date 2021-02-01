@@ -2,7 +2,7 @@
 PATH="/usr/local/bin:/usr/bin:/bin"
 
 #版本、初始化变量
-VERSION="2.1.5"
+VERSION="2.1.6"
 ENV_PATH="$(dirname $0)/.env"
 IS_MACOS=$(uname | grep 'Darwin' | wc -l)
 IS_DISPALY_CONTEXT=1
@@ -123,7 +123,7 @@ ssp_autochenkin() {
             # 邮箱、域名脱敏处理
             username_prefix="${username%%@*}"
             username_suffix="${username#*@}"
-            username_root="${username#*.}"
+            username_root="${username_suffix#*.}"
             username_text="${username_prefix:0:2}⁎⁎⁎@${username_suffix:0:2}⁎⁎⁎.${username_root}"
 
             domain_protocol="${domain%%://*}"
